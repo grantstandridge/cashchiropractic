@@ -1,0 +1,11 @@
+/**************************
+*                         *
+*       TYPOGRAPHY        *
+*                         *
+**************************/
+h2, .h2 {
+    @include break-min($m){
+        font-size: 3.6em;
+    }
+    font-size: 2.8em;
+}

@@ -1,0 +1,218 @@
+@import "partials/_sass-mixins";
+@import "partials/_layout";
+@import "partials/_colors";
+@import "partials/_icons";
+@import "partials/_helpers";
+@import "partials/_defaults";
+@import "partials/_typography";
+
+.site-header {
+    @include break-min($m){
+        @include clearfix;
+    }
+    .logo {
+        @include break-min($m){
+            display: inline-block;
+        }
+        a {
+            @include break-min($m){
+                float: left;
+                width: 19em;
+                height: 3.35em;
+            }
+            background: transparent url("../images/logo.png")no-repeat center center/contain;
+            width: 14em;
+            height: 2.5em;
+            text-indent: -999em;
+        }
+        display: block;
+    }
+    [class*="btn"] {
+        &:hover {
+            @include box-shadow(0, 0, .375em, rgba(0, 0, 0, .25));
+        }
+        &:active {
+            @include transform(translateY(2px));
+        }
+        @include transition(box-shadow);
+        @include break-min($m){
+            float: right;
+            margin: 1.25em 0 0;
+        }
+        font-size: 1.6em;
+    }
+    padding: 2em 0;
+    border-top: .6em solid $color-primary;
+}
+
+.hero {
+    @include break-min(60em){
+        padding-bottom: 0;
+        height: 34.5em;
+        background-size: cover;
+        background-position: center 35%;
+    }
+    padding-bottom: 35.5%;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+
+.tagline {
+    &:before {
+        @include abs-pos(100%, auto, auto, 50%);
+        @include transform(translateX(-50%));
+        content: "";
+        display: block;
+        border-left: 1.8em solid transparent;
+        border-right: 1.8em solid transparent;
+        border-top: 1.8em solid $color-primary;
+    }
+    h2 {
+        @include break-min($m){
+            padding: 1em 0;
+        }
+        padding: 1.25em 0;
+    }
+    position: relative;
+}
+
+.secondary {
+    @include break-min($m){
+        @include clearfix;
+        padding: 5em 0;
+    }
+    .item {
+        &:first-child {
+            @include break-min($m){
+                padding: 0 2em;
+            }
+            @include break-min($l){
+                padding: 0 3em;
+            }
+            padding: 5em 0;
+        }
+        @include break-min($m){
+            float: left;
+            width: calc(1/3 * 100%);
+            padding: 0 2em;
+        }
+        @include break-min($l){
+            padding: 0 3em;
+        }
+        padding: 0 0 5em;
+    }
+    [class*="icon-"] {
+        @include rounded-corners(50%);
+        width: 2em;
+        height: 2em;
+        font-size: 2em;
+        padding: .55em .5em .21em;
+    }
+    .item-body {
+        font-size: 1.4em;
+        margin: 1em 0 0;
+        line-height: 1.5;
+    }
+}
+
+.site-footer {
+    @include break-min($m){
+        @include clearfix;
+        text-align: left;
+    }
+    .contact {
+        @include break-min($m){
+            width: calc(2/3 * 100%);
+            float: left;
+            padding: 0 7em 0 0;
+        }
+    }
+    .hours {
+        @include break-min($m){
+            width: calc(1/3 * 100%);
+            float: left;
+        }
+    }
+    .method {
+        padding: 0 0 3em;
+    }
+    .method > p {
+        font-size: 1.8em;
+        margin: 0;
+    }
+    .phone {
+        font-size: 3.1em;
+    }
+    .icon-pin-map {
+        @include break-min($s){
+            margin-left: 0;
+        }
+        font-size: 4.4em;
+        vertical-align: sub;
+        margin-left: -.19em;
+    }
+    .postal-address {
+        @include break-min($s){
+            width: auto;
+            vertical-align: inherit;
+        }
+        font-size: 1.8em;
+        font-style: normal;
+        width: 13em;
+        vertical-align: top;
+    }
+    .btn-share {
+        &:hover {
+            @include box-shadow(0, 0, .375em, rgba(0, 0, 0, .25));
+        }
+        &:active {
+            @include transform(translateY(2px));
+        }
+        @include break-min($m){
+            margin: 0 .75em 0 0;
+        }
+        @include transition(box-shadow);
+        @include rounded-corners(50%);
+        font-size: 2em;
+        width: 2em;
+        height: 2em;
+        margin: 0 .75em;
+        padding: .55em .5em .21em;
+    }
+    li {
+        margin: 0 0 1em;
+    }
+    .allcaps {
+        font-size: 2.2em;
+        margin: 0 0 .15em;
+    }
+    .label {
+        font-size: 1.8em;
+        margin: 0;
+    }
+    .value {
+        
+        font-size: 1.6em;
+    }
+    hr {
+        border: 0;
+        height: 1px;
+        width: 100%;
+        margin: 0;
+        clear: both;
+    }
+    .redirect,
+    .legal {
+        font-size: 1.2em;
+        margin: .5em 0 0;
+    }
+    .redirect a {
+        &:hover {
+            border-bottom: 1px solid rgba(91, 158, 62, 1);
+        }
+        border-bottom: 1px dotted rgba(91, 158, 62, .5);
+    }
+    text-align: center;
+    padding: 5em 0;
+}

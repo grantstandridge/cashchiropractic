@@ -1,0 +1,20 @@
+/**************************
+*                         *
+*         COLORS          *
+*                         *
+**************************/
+$green: rgba(91, 158, 62, 1); // #5b9e3e
+$gray-dark: rgba(65, 64, 66, 1); // #414042
+$gray-light: rgba(88, 89, 91, 1); // #58595b
+$silver: rgba(242, 242, 242, 1); // #f2f2f2
+
+$color-primary: $green;
+$color-dark: $gray-dark;
+$color-med: $gray-light;
+$color-light: $silver;
+
+@include color("color-primary", $color-primary);
+@include color("color-dark", $color-dark);
+@include color("color-med", $color-med);
+@include color("color-light", $color-light);
+@include color("color-white", #fff);

@@ -1,0 +1,22 @@
+/**************************
+*                         *
+*      LAYOUT / GRID      *
+*                         *
+**************************/
+$s: 30em; // 480px
+$m-1: 47.9375em; // 767px
+$m: 48em; // 768px
+$m-plus-1: 48.0625em; // 769px
+$l: 64em; // 1024px
+$l-plus-1: 64.0625em; // 1025px
+$xl: 80em; // 1280px
+
+.layout-wrap {
+    @include break-min($l){
+        width: 96em; // 960px
+        margin: 0 auto;
+        padding: 0;
+    }
+    width: 100%;
+    padding: 0 2em;
+}

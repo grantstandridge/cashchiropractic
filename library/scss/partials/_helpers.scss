@@ -1,0 +1,45 @@
+/**************************
+*                         *
+*         HELPERS         *
+*                         *
+**************************/
+.mobile { @include break-min($m){display:none !important;} }
+.tablet { @include break-max($m-1){display:none !important;} }
+.desktop { @include break-max($m){display:none !important;} }
+.relative { position:relative; }
+.list-rest { @include list-reset(); }
+.inline-block { display:inline-block; }
+.block { display:block; }
+.inline { display:inline; }
+.fixed { position:fixed; }
+.transparent { opacity:0; }
+.underline { text-decoration:underline; }
+.allcaps { text-transform:uppercase; }
+.center-text { text-align:center; }
+.bold { font-weight:700; }
+.regular { font-weight:400; }
+.center-block {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+.f-left { float:left; }
+.f-right { float:right; }
+.o-hidden { overflow:hidden; }
+.clearfix { @include clearfix(); }
+.letter-spacing-1 { letter-spacing:.1em; }
+.letter-spacing-2 { letter-spacing:.2em; }
+.italic { font-style:italic; }
+.sans-serif { font-family:'Avenir', 'Helvetica', sans-serif; }
+%btn {
+    @include rounded-corners(4px);
+    padding: .4em .5em .3em;
+}
+.btn__inline-block {
+    @extend %btn;
+    display: inline-block;
+}
+.btn__block {
+    @extend %btn;
+    display: block;
+}

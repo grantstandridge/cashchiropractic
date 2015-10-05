@@ -7,7 +7,7 @@
 .tablet { @include break-max($m-1){display:none !important;} }
 .desktop { @include break-max($m){display:none !important;} }
 .relative { position:relative; }
-.list-rest { @include list-reset(); }
+.list-reset { @include list-reset(); }
 .inline-block { display:inline-block; }
 .block { display:block; }
 .inline { display:inline; }
@@ -30,9 +30,10 @@
 .letter-spacing-1 { letter-spacing:.1em; }
 .letter-spacing-2 { letter-spacing:.2em; }
 .italic { font-style:italic; }
+.normal { font-style:normal; }
 .sans-serif { font-family:'Avenir', 'Helvetica', sans-serif; }
 %btn {
-    @include rounded-corners(4px);
+    border-radius: 4px;
     padding: .4em .5em .3em;
 }
 .btn__inline-block {

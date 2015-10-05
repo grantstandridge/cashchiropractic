@@ -7,17 +7,22 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
-    NotificationCenter = require('node-notifier'),
+    autoprefixer = require('gulp-autoprefixer'),
+    gutil = require('gulp-util'),
     srcpath = './library';
 
 // css
 // compile sass
+// export unminified to dist
 // minify, add .min to filename
 // export to dist
 gulp.task('sass',function(){
     gulp.src(srcpath + '/scss/style.scss')
         .pipe(sass())
-            .on('error', errorHandler)
+            .on('error', gutil.log)
+        .pipe(autoprefixer({browsers:['last 2 versions']}))
+            .on('error', gutil.log)
+        .pipe(gulp.dest(srcpath + '/css'))
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(srcpath + '/css'));
@@ -31,7 +36,7 @@ gulp.task('concat', function(){
     gulp.src([srcpath + '/js/lib/*.js', srcpath + '/js/main.js'])
         .pipe(concat('script.js'))
         .pipe(uglify())
-            .on('error', errorHandler)
+            .on('error', gutil.log)
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(srcpath + '/js'))
 });
@@ -44,11 +49,3 @@ gulp.task('watch',function(){
 });
 
 gulp.task('default', ['watch', 'concat', 'sass']);
-
-function errorHandler(err){
-    var notifier = new NotificationCenter.Notification();
-    notifier.notify({
-        title: 'wordpress.dev', /* Change this to whatever the name of the site is you're working in */
-        message: 'Error: ' + err.message
-    });
-};

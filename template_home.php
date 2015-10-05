@@ -4,20 +4,19 @@
  *
 */
 ?>
-<?php get_header(); ?>
-    <header class="site-header bg-color-white">
+<?php
+    get_header();
+    $bgImageObject = get_field('bg_image');
+    $bgImageURL = ( !empty($bgImageObject) ? $bgImageObject['url'] : get_stylesheet_directory_uri() . "/library/images/family.jpg" );
+
+    $headline = get_field('intro_text');
+?>
+    <section id="hero" class="hero bg-color-primary" data-bg-url="<?php echo $bgImageURL; ?>"></section>
+    <?php if ( !empty($headline) ) : ?><section class="tagline color-white bg-color-primary">
         <div class="layout-wrap">
-            <h1 class="logo">
-                <a href="/" class="block">Cash Chiropractic</a>
-            </h1>
+            <h2><?php echo $headline; ?></h2>
         </div>
-    </header>
-    <section id="hero" class="hero bg-color-primary" data-bg-url="<?php echo get_template_directory_uri(); ?>/library/images/family.jpg"></section>
-    <section class="tagline color-white bg-color-primary">
-        <div class="layout-wrap">
-            <h2>No insurance? No problem. We've got your back.</h2>
-        </div>
-    </section>
+    </section><?php endif; ?>
     <section class="secondary">
         <div class="layout-wrap">
             <section class="item center-text">
@@ -34,7 +33,7 @@
             </section>
         </div>
     </section>
-    <footer class="site-footer bg-color-light">
+    <section class="outro bg-color-light">
         <div class="layout-wrap">
             <section class="contact">
                 <div class="method">
@@ -72,8 +71,6 @@
                     </li>
                 </ul>
             </section>
-            <hr class="bg-color-med" />
-            <p class="redirect inline-block color-med">Please visit the <a href="http://standridgechiropractic.com" target="_blank" class="color-primary">Standridge Clinic</a> website to learn more about our comprehensive chiropractic services.</p>&nbsp;<p class="legal inline-block color-med">&copy; 2015 Cash Chiropractic. All Rights Reserved.</p>
         </div>
-    </footer>
+    </section>
 <?php get_footer(); ?>

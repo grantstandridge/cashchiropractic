@@ -12,23 +12,6 @@
 }
 
 /* ==========================================================================
-   Element Shadow
-   Example: @include box-shadow(5px, 5px, 5px, #000)
-   ========================================================================== */
-
-@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
-    @if $inset {
-         -webkit-box-shadow: inset $left $top $blur $color;
-            -moz-box-shadow: inset $left $top $blur $color;
-                 box-shadow: inset $left $top $blur $color;
-    } @else {
-         -webkit-box-shadow: $left $top $blur $color;
-            -moz-box-shadow: $left $top $blur $color;
-                 box-shadow: $left $top $blur $color;
-    }
-}
-
-/* ==========================================================================
    Media Query
    Example: @include break('min-width: 321px'){ Custom CSS Styles }
    ========================================================================== */
@@ -107,13 +90,11 @@
 
 @mixin list-reset() {
     list-style: none;
-    border: 0;
-    margin: 0;
-    padding: 0;
-    li {
-        list-style: none;
-        margin: 0;
-        padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    > li {
+        display: inline-block;
     }
 }
 
@@ -124,102 +105,8 @@
 
 @mixin linear-gradient($fromColor, $toColor) {
     background-color: $toColor; /* Fallback Color */
-    background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor));
-    background-image: -webkit-linear-gradient(top, $fromColor, $toColor);
-    background-image:    -moz-linear-gradient(top, $fromColor, $toColor);
-    background-image:     -ms-linear-gradient(top, $fromColor, $toColor);
-    background-image:      -o-linear-gradient(top, $fromColor, $toColor);
-    background-image:         linear-gradient(top, $fromColor, $toColor);
+    background-image: linear-gradient(top, $fromColor, $toColor);
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='$fromColor', EndColorStr='$toColor');
-}
-
-/* ==========================================================================
-   Disables Text Selection on Element
-   Example: @include no-text-select()
-   ========================================================================== */
-
-@mixin no-text-select {
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-         -o-user-select: none;
-            user-select: none;
-}
-
-/* ==========================================================================
-   Opacity
-   Example: @include opacity(0)
-   ========================================================================== */
-
-@mixin opacity ($value: 0.5) {
-    opacity: $value;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" $value * 100 ")";
-    filter: "alpha(opacity=" $value * 100 ")";
-    zoom: 1;
-}
-
-/* ==========================================================================
-   CSS3 Rounded Corners
-   Example: @include rounded-corners(10px)
-   ========================================================================== */
-
-@mixin rounded-corners($radius) {
-    -webkit-border-radius: $radius;
-       -moz-border-radius: $radius;
-        -ms-border-radius: $radius;
-         -o-border-radius: $radius;
-            border-radius: $radius;
-
-    // keeps background from busting out of border
-
-    -webkit-background-clip: padding-box;
-       -moz-background-clip: padding;
-            background-clip: padding-box;
-}
-
-/* ==========================================================================
-   CSS3 Animation Transition
-   Example: @include transition('background-color 3s linear 1s')
-   ========================================================================== */
-
-@mixin transition($property: all, $duration: .25s, $easing: ease) {
-    @if $property == "transform" {
-        -webkit-transition: -webkit-#{$property} $duration $easing;
-           -moz-transition: -moz-#{$property} $duration $easing;
-            -ms-transition: -ms-#{$property} $duration $easing;
-             -o-transition: -o-#{$property} $duration $easing;
-                transition: $property $duration $easing;
-    } @else if $property == "box-shadow" {
-        -webkit-transition: -webkit-#{$property} $duration $easing;
-           -moz-transition: -moz-#{$property} $duration $easing;
-                transition: $property $duration $easing;
-    } @else if $property == "none" {
-        -webkit-transition: none;
-           -moz-transition: none;
-            -ms-transition: none;
-             -o-transition: none;
-                transition: none;
-    } @else {
-        -webkit-transition: $property $duration $easing;
-           -moz-transition: $property $duration $easing;
-            -ms-transition: $property $duration $easing;
-             -o-transition: $property $duration $easing;
-                transition: $property $duration $easing;
-    }
-}
-
-/* ==========================================================================
-CSS3 Transform
-Example: @include transform(scale(1.2))
-========================================================================== */
-
-@mixin transform($transform) {
-    -webkit-transform: $transform;
-       -moz-transform: $transform;
-        -ms-transform: $transform;
-         -o-transform: $transform;
-            transform: $transform;
 }
 
 /* ==========================================================================

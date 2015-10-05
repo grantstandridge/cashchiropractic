@@ -112,18 +112,16 @@ function ges_theme_support() {
 	// default thumb size
 	set_post_thumbnail_size(125, 125, true);
 
-    /*
-	// wp menus
+    // wp menus
 	add_theme_support( 'menus' );
 
 	// registering wp3+ menus
 	register_nav_menus(
 		array(
-			'main-nav' => __( 'The Main Menu', 'gestheme' ),   // main nav in header
+			'site-nav' => __( 'The Main Menu', 'gestheme' ),   // main nav in header
 			'footer-links' => __( 'Footer Links', 'gestheme' ) // secondary nav in footer
 		)
 	);
-    */
 } /* end ges theme support */
 
 /*********************

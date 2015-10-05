@@ -153,16 +153,16 @@ add_action( 'customize_register', 'ges_theme_customizer' );
 // Sidebars & Widgetizes Areas
 function ges_register_sidebars() {
     /*
-	register_sidebar(array(
-		'id' => 'sidebar1',
-		'name' => __( 'Sidebar 1', 'gestheme' ),
-		'description' => __( 'The first (primary) sidebar.', 'gestheme' ),
+    register_sidebar(array(
+		'id' => 'page-sidebar',
+		'name' => __( 'Page Sidebar', 'gestheme' ),
+		'description' => __( 'The page\'s sidebar.', 'gestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	));
-    */
+	*/
 
 	/*
 	to add more sidebars or widgetized areas, just copy

@@ -37,7 +37,7 @@ body.menu-on {
     .tel {
         @include break-min($m){
             font-size: 3.1em;
-            margin-top: 1.4em;
+            margin-top: .7em;
         }
         font-size: 1.5em;
         margin-top: 3.5em;
@@ -210,6 +210,8 @@ body.menu-on {
             padding: 1em 0;
         }
         padding: 1.25em 0;
+        text-align: center;
+        font-weight: 400;
     }
     position: relative;
 }
@@ -391,25 +393,28 @@ body.menu-on {
     h3, h4, h5, h6 {
         font-weight: 700;
         color: $color-primary;
-        margin: 0 0 1em;
+    }
+    h4, h5, h6 {
+        margin: 0 0 .5em;
     }
     h3 {
         @include break-min($m){
             font-size: 2.8em;
         }
         font-size: 2.4em;
+        margin: 0 0 1em;
     }
     h4 {
         @include break-min($m){
-            font-size: 2.4em;
+            font-size: 2em;
         }
-        font-size: 2em;
+        font-size: 1.5em;
     }
     h5 {
         @include break-min($m){
-            font-size: 2em;
+            font-size: 1.8em;
         }
-        font-size: 1.6em;;
+        font-size: 1.35em;;
     }
     h6 {
         @include break-min($m){
@@ -426,7 +431,7 @@ body.menu-on {
     }
     p {
         margin: 0;
-        padding: 0 0 1em;
+        padding: 0 0 1.25em;
         line-height: 1.5;
     }
     strong {

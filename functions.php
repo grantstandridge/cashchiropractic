@@ -12,7 +12,6 @@ sidebars, comments, ect.
 require_once( 'library/ges.php' );
 
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
-/*
 function ges_login_css() {
 	wp_enqueue_style( 'ges_login_css', get_template_directory_uri() . '/library/css/login.css', false );
 }
@@ -27,7 +26,6 @@ function ges_login_title() { return get_option( 'blogname' ); }
 add_action( 'login_enqueue_scripts', 'ges_login_css', 10 );
 add_filter( 'login_headerurl', 'ges_login_url' );
 add_filter( 'login_headertitle', 'ges_login_title' );
-*/
 // require_once( 'library/admin.php' );
 
 /*********************

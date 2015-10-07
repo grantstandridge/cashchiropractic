@@ -18,24 +18,32 @@ This is the Wordpress logo in the admin area.
 You'll have to load your own images and mess
 with the width and height.
 */
-.login h1 a {
-  background: url(../images/login-logo.png) no-repeat top center;
-  /* make sure to replace this! */
-  width: 326px;
-  height: 67px;
-  text-indent: -9999px;
-  overflow: hidden;
-  padding-bottom: 15px;
-  display: block; }
+body, html {
+    background-color: #f2f2f2;
+}
 
 form {
   margin-left: 8px;
   padding: 26px 24px 46px;
   font-weight: normal;
   background: white;
-  border: 1px solid #E5E5E5;
-  border-radius: 3px;
-  box-shadow: none; }
+/*   border: 1px solid #E5E5E5; */
+/*   border-radius: 3px; */
+  box-shadow: none;
+  -webkit-box-shadow: none; }
+
+.login form {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.login label {
+    color: #58595b;
+}
+
+.login form .input, .login form input[type=checkbox], .login input[type=text] {
+    background: #f2f2f2;
+}
 
 body form .input {
   font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif;
@@ -46,20 +54,77 @@ body form .input {
   margin-top: 2px;
   margin-right: 6px;
   margin-bottom: 16px;
-  border: 1px solid #E5E5E5;
+  border: 1px solid #D8D8DA;
   background: #FBFBFB;
   outline: none;
-  box-shadow: inset 1px 1px 2px rgba(200, 200, 200, 0.2); }
+  box-shadow: none; }
 
-/*
-You'll have to override some of the default styles
-but since we're referencing the id, it should be easy.
-*/
-/* login button*/
-/*
-retina login logo
-*/
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-  .login h1 a {
-    background: url(../images/login-logo@2x.png) no-repeat top center;
-    /* make sure to replace this! */ } }
+input[type=text]:focus, input[type=search]:focus, input[type=radio]:focus, input[type=tel]:focus, input[type=time]:focus, input[type=url]:focus, input[type=week]:focus, input[type=password]:focus, input[type=checkbox]:focus, input[type=color]:focus, input[type=date]:focus, input[type=datetime]:focus, input[type=datetime-local]:focus, input[type=email]:focus, input[type=month]:focus, input[type=number]:focus, select:focus, textarea:focus {
+    border-color: #5b9e3e;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+input[type=text], input[type=search], input[type=radio], input[type=tel], input[type=time], input[type=url], input[type=week], input[type=password], input[type=checkbox], input[type=color], input[type=date], input[type=datetime], input[type=datetime-local], input[type=email], input[type=month], input[type=number], select, textarea {
+    color: #58595b;
+}
+
+input[type=checkbox]:checked:before {
+    color: #5b9e3e;
+}
+
+input[type=radio], input[type=checkbox] {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: #D8D8DA;
+}
+
+.wp-core-ui .button-primary {
+    background-color: #5b9e3e;
+    border: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border-radius: 0;
+}
+
+.wp-core-ui .button-primary.focus, .wp-core-ui .button-primary.hover, .wp-core-ui .button-primary:focus, .wp-core-ui .button-primary:hover {
+    background-color: #508C36;
+}
+
+.wp-core-ui .button-primary.focus, .wp-core-ui .button-primary:focus {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.login #backtoblog a, .login #nav a, .login h1 a {
+    color: #5b9e3e;
+    border-bottom: 1px dotted rgba(91, 158, 62, .5);
+}
+
+.login #backtoblog a:hover, .login #nav a:hover, .login h1 a:hover {
+    color: #5b9e3e;
+    border-bottom: 1px solid #5b9e3e;
+}
+
+.login #backtoblog a:focus, .login #nav a:focus, .login h1 a:focus {
+    font-weight: 700;
+    color: #5b9e3e;
+}
+
+.login .message {
+    border-left-color: #5b9e3e;
+}
+
+.login h1 a {
+  background: url(../images/login-logo.svg) no-repeat top center;
+  /* make sure to replace this! */
+  width: 39px;
+  height: 84px;
+  text-indent: -9999px;
+  overflow: hidden;
+  display: block;
+  border-bottom: none; }
+
+.login h1 a:hover {
+    border-bottom: none;
+}

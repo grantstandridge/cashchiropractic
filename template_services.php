@@ -6,6 +6,9 @@
 ?>
 <?php
     get_header();
+
+    if( have_posts() ) : while( have_posts() ) : the_post(); $post_content = apply_filters('the_content', get_the_content()); endwhile; else : $post_content = ""; endif;
+
     $bgImageObject = get_field('bg_image');
     $bgImageURL = ( !empty($bgImageObject) ? $bgImageObject['url'] : get_stylesheet_directory_uri() . "/library/images/family.jpg" );
 
@@ -22,7 +25,11 @@
             <h2><?php echo $headline; ?></h2>
         </div>
     </section><?php endif; ?>
-    <?php if ( isset($servicesPrimary) ) : ?><section class="services-primary">
+    <?php if ( !empty($post_content) ) : ?><section class="wysiwyg">
+        <div class="layout-wrap">
+            <?php echo $post_content; ?>
+        </div>
+    </section><?php elseif ( isset($servicesPrimary) ) : ?><section class="services-primary">
         <div class="layout-wrap">
             <?php while ( has_sub_field('services_primary') ) : ?><section class="item center-text">
                 <h3 class="item__title bold color-dark"><?php the_sub_field('title'); ?></h3>

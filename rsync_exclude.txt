@@ -1,0 +1,10 @@
+.DS_Store
+scss
+node_modules
+.gitignore
+gulpfile.js
+package.json
+lib
+main.js
+.git
+rsync_exclude.txt

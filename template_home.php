@@ -7,9 +7,11 @@
 <?php
     get_header();
     $bgImageObject = get_field('bg_image');
-    $bgImageURL = ( !empty($bgImageObject) ? $bgImageObject['url'] : get_stylesheet_directory_uri() . "/library/images/family.jpg" );
+    $bgImageURL = ( !empty($bgImageObject) ? $bgImageObject['url'] : "http://www.placecage.com/gif/1100/400?v=" . rand(100, 999) );
 
     $headline = get_field('intro_text');
+
+    $attributes = get_field('attributes');
 ?>
     <section id="hero" class="hero bg-color-primary" data-bg-url="<?php echo $bgImageURL; ?>"></section>
     <?php if ( !empty($headline) ) : ?><section class="tagline color-white bg-color-primary">
@@ -17,22 +19,19 @@
             <h2><?php echo $headline; ?></h2>
         </div>
     </section><?php endif; ?>
-    <section class="secondary">
+    <?php if( isset($attributes) ) : ?><section class="secondary">
         <div class="layout-wrap">
-            <section class="item center-text">
-                <i class="icon-bubble color-white bg-color-primary inline-block"></i>
-                <p class="color-dark item-body">Introducing Cash Chiropractic &ndash; a simple solution for obtaining effective, natural pain relief that's easy on your wallet. With over 30 years of experience, Cash Chiropractic has your back.</p>
-            </section>
-            <section class="item center-text">
-                <i class="icon-heart color-white bg-color-primary inline-block"></i>
-                <p class="color-dark item-body">Founded by Dr. Tracy Standridge, Cash Chiropractic's mission is to help people feel better quickly and easily, without the hassles and ever-increasing expenses of health insurance premiums and co-payments.</p>
-            </section>
-            <section class="item center-text">
-                <i class="icon-cash color-white bg-color-primary inline-block"></i>
-                <p class="color-dark item-body">If you're experiencing physical pain in your neck, back or extremities, and either don't have major medical insurance or you'd just prefer to pay in cash, Cash Chiropractic is for you.</p>
-            </section>
+            <?php while( has_sub_field('attributes') ) : ?><section class="item center-text">
+                <?php if( get_sub_field('icon_suffix') ) : ?><i class="icon-<?php the_sub_field('icon_suffix'); ?> color-white bg-color-primary inline-block"></i><?php endif; ?>
+                <p class="color-dark item-body"><?php the_sub_field('detail'); ?></p>
+            </section><?php endwhile; ?>
         </div>
-    </section>
+    </section><?php endif; ?>
+    <?php if( have_posts() ) : while( have_posts() ) : the_post(); $the_post = get_the_content(); if( !empty($the_post) ) : ?><section class="wysiwyg">
+        <div class="layout-wrap">
+            <?php the_content(); ?>
+        </div>
+    </section><?php endif;endwhile;endif; ?>
     <section class="outro bg-color-light">
         <div class="layout-wrap">
             <section class="contact">
@@ -51,25 +50,7 @@
                 </div>
             </section>
             <section class="hours">
-                <p class="allcaps color-primary bold">Hours</p>
-                <ul class="color-med">
-                    <li class="time-block">
-                        <p class="label bold">Monday-Thursday</p>
-                        <span class="value">9am - 12:30pm &amp; 2:30pm - 6pm</span>
-                    </li>
-                    <li class="time-block">
-                        <p class="label bold">Friday</p>
-                        <span class="value">7am - 9am &amp; 3pm - 7pm</span>
-                    </li>
-                    <li class="time-block">
-                        <p class="label bold">Saturday</p>
-                        <span class="value">8am - 10am</span>
-                    </li>
-                    <li class="time-block">
-                        <p class="label bold">Sunday</p>
-                        <span class="value">Closed</span>
-                    </li>
-                </ul>
+                <?php the_field('hours', 'option'); ?>
             </section>
         </div>
     </section>

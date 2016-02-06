@@ -1,7 +1,7 @@
 <?php
     get_header();
     $bgImageObject = get_field('bg_image');
-    $bgImageURL = ( !empty($bgImageObject) ? $bgImageObject['url'] : get_stylesheet_directory_uri() . "/library/images/family.jpg" );
+    $bgImageURL = ( !empty($bgImageObject) ? $bgImageObject['url'] : "http://www.placecage.com/c/1100/400?v=" . rand(100, 999) );
 
     $headline = get_field('intro_text');
 

@@ -1,1 +1,4 @@
 node_modules
+library/css/style.css
+library/css/style.min.css
+library/js/script.min.js

@@ -221,6 +221,53 @@ body.menu-on {
         @include clearfix;
         padding: 5em 0;
     }
+    h3, h4, h5, h6 {
+        font-weight: 700;
+        color: $color-primary;
+    }
+    h4, h5, h6 {
+        margin: 0 0 .5em;
+    }
+    h3 {
+        @include break-min($m){
+            font-size: 2.8em;
+        }
+        font-size: 2.4em;
+        margin: 0 0 1em;
+    }
+    h4 {
+        @include break-min($m){
+            font-size: 2em;
+        }
+        font-size: 1.5em;
+    }
+    h5 {
+        @include break-min($m){
+            font-size: 1.8em;
+        }
+        font-size: 1.35em;;
+    }
+    h6 {
+        @include break-min($m){
+            font-size: 1.6em;
+        }
+        font-size: 1.2em;
+    }
+    ul, p {
+        @include break-min($m){
+            font-size: 1.6em;
+        }
+        font-size: 1.2em;
+        color: $color-dark;
+    }
+    p {
+        margin: 0;
+        padding: 0 0 1.25em;
+        line-height: 1.5;
+    }
+    strong {
+        color: $color-primary;
+    }
     .item {
         &:first-child {
             @include break-min($m){
@@ -250,8 +297,12 @@ body.menu-on {
     }
     .item-body {
         font-size: 1.4em;
-        margin: 1em 0 0;
+        margin: 3.85714em 0 0;
+        padding: 0;
         line-height: 1.5;
+    }
+    i + .item-body {
+      margin-top: 1em;
     }
 }
 
@@ -294,6 +345,12 @@ body.menu-on {
             font-size: 2.4em;
         }
         font-size: 1.8em;
+    }
+    .heading a {
+        &:hover {
+            border-bottom: 1px solid rgba(91, 158, 62, 1);
+        }
+        border-bottom: 1px dotted rgba(91, 158, 62, .5);
     }
     .service-list {
         @include break-min($m){
@@ -361,6 +418,13 @@ body.menu-on {
         font-size: 1.2em;
         line-height: 1.5;
         overflow: hidden;
+    }
+    .details a {
+        &:hover {
+            border-bottom: 1px solid rgba(91, 158, 62, 1);
+        }
+        color: $color-primary;
+        border-bottom: 1px dotted rgba(91, 158, 62, .5);
     }
     padding: 5em 0 0;
 }
@@ -443,6 +507,9 @@ body.menu-on {
         margin-bottom: 0;
         list-style: none;
     }
+    .complement .teammates {
+        border: 1px solid #f2f2f2;
+    }
     li {
         &:last-of-type {
             margin-bottom: 0;
@@ -450,12 +517,68 @@ body.menu-on {
         line-height: 1.5;
         margin-bottom: 1.25em;
     }
+    .teammates li {
+        &:first-child {
+            border-top: none;
+        }
+        margin: 0;
+        border-top: 1px solid #f2f2f2;
+    }
     a {
         &:hover {
             border-bottom: 1px solid rgba(91, 158, 62, 1);
         }
         color: $color-primary;
         border-bottom: 1px dotted rgba(91, 158, 62, .5);
+    }
+    .teammate-bio {
+        display: none;
+    }
+    .teammate-bio.focus {
+        &:before,
+        &:after {
+            content: "";
+        }
+        &:after {
+            display: table;
+            clear: both;
+        }
+        display: block;
+    }
+    .teammates a {
+        &:hover {
+            border-bottom: none;
+        }
+        &.focus {
+            padding-left: 2em;
+            background-color: #5b9e3e;
+            color: #fff;
+        }
+        display: block;
+        padding: .5em 0 .5em 1em;
+        border-bottom: none;
+    }
+    img {
+        display: block;
+        margin-bottom: 1em;
+        max-width: 100%;
+    }
+    img.alignleft {
+        float: left;
+        margin-right: 1em;
+    }
+    img.alignright {
+        float: right;
+        margin-left: 1em;
+    }
+    img.aligncenter {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    img.alignleft,
+    img.alignright,
+    img.aligncenter {
+        max-width: 65%;
     }
     padding: 5em 0 10em;
 }
@@ -546,7 +669,7 @@ body.menu-on {
         margin: 0;
     }
     .value {
-        
+
         font-size: 1.6em;
     }
     padding: 5em 0 0;

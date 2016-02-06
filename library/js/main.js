@@ -10,12 +10,15 @@
         body : document.body,
         hero : document.getElementById("hero"),
         triggerMenu : document.getElementById("trigger-menu"),
-        serviceTriggers : document.getElementsByClassName("trigger-service")
+        serviceTriggers : document.getElementsByClassName("trigger-service"),
+        teammateNames : document.querySelectorAll(".teammates a"),
+        teammateBios : document.querySelectorAll(".teammate-bio")
     };
 
     constants = {
         menuClass : "menu-on",
-        serviceTriggerClass : "open"
+        serviceTriggerClass : "open",
+        teammateClass : "focus"
     };
 
     utils = {};
@@ -42,6 +45,15 @@
                 this.parentElement.classList.add( constants.serviceTriggerClass );
                 this.innerHTML = "-";
             }
+        },
+        toggleTeammateVisibility : function( e ){
+            var index = +this.getAttribute("data-idx");
+            for ( i = 0; i < els.teammateBios.length; i++ ) {
+                els.teammateBios[i].classList.remove(constants.teammateClass);
+                els.teammateNames[i].classList.remove(constants.teammateClass);
+            }
+            els.teammateBios[index].classList.add(constants.teammateClass);
+            this.classList.add(constants.teammateClass);
         }
     };
 
@@ -51,8 +63,12 @@
     }
 
     els.triggerMenu.addEventListener( "click", fn.toggleMenu );
-    for ( i = 0; i < els.serviceTriggers.length; i++ ) {console.log(i);
+    for ( i = 0; i < els.serviceTriggers.length; i++ ) {
         els.serviceTriggers[i].addEventListener( "click", fn.toggleServiceVisibility );
+    }
+
+    for ( i = 0; i < els.teammateNames.length; i++ ) {
+        els.teammateNames[i].addEventListener( "click", fn.toggleTeammateVisibility );
     }
 
 })();

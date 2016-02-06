@@ -52,6 +52,8 @@ Example: @include color(#000)
       width: 96em;
       margin: 0 auto;
       padding: 0; } }
+  [class*="team-php"] .secondary .layout-wrap {
+    border-bottom: 1px solid #f2f2f2; }
 
 /**************************
 *                         *
@@ -239,7 +241,7 @@ Example: @include color(#000)
 
 .btn__inline-block, .btn__block {
   border-radius: 4px;
-  padding: 0.4em 0.5em 0.3em; }
+  padding: .4em .5em .3em; }
 
 .btn__inline-block {
   display: inline-block; }
@@ -334,7 +336,7 @@ h2, .h2 {
     font-size: 2.4em;
     height: 1.5em;
     width: 1.5em;
-    padding: 0.2em 0 0 0.25em; }
+    padding: .2em 0 0 .25em; }
     @media (min-width: 48em) {
       .site-header .site-nav-trigger {
         display: none; } }
@@ -342,9 +344,9 @@ h2, .h2 {
       border-color: #fff;
       color: #5b9e3e;
       background-color: #fff;
-      padding: 0.3em 0 0 0.4em; }
+      padding: .3em 0 0 .4em; }
   .site-header [class*="btn"] {
-    transition: box-shadow 0.25s ease-in-out;
+    transition: box-shadow .25s ease-in-out;
     font-size: 1.6em; }
     .site-header [class*="btn"]:hover {
       box-shadow: 0 0 0.375em rgba(0, 0, 0, 0.25); }
@@ -487,6 +489,53 @@ h2, .h2 {
     .secondary:after {
       clear: both; } }
 
+.secondary h3, .secondary h4, .secondary h5, .secondary h6 {
+  font-weight: 700;
+  color: #5b9e3e; }
+
+.secondary h4, .secondary h5, .secondary h6 {
+  margin: 0 0 .5em; }
+
+.secondary h3 {
+  font-size: 2.4em;
+  margin: 0 0 1em; }
+  @media (min-width: 48em) {
+    .secondary h3 {
+      font-size: 2.8em; } }
+
+.secondary h4 {
+  font-size: 1.5em; }
+  @media (min-width: 48em) {
+    .secondary h4 {
+      font-size: 2em; } }
+
+.secondary h5 {
+  font-size: 1.35em; }
+  @media (min-width: 48em) {
+    .secondary h5 {
+      font-size: 1.8em; } }
+
+.secondary h6 {
+  font-size: 1.2em; }
+  @media (min-width: 48em) {
+    .secondary h6 {
+      font-size: 1.6em; } }
+
+.secondary ul, .secondary p {
+  font-size: 1.2em;
+  color: #414042; }
+  @media (min-width: 48em) {
+    .secondary ul, .secondary p {
+      font-size: 1.6em; } }
+
+.secondary p {
+  margin: 0;
+  padding: 0 0 1.25em;
+  line-height: 1.5; }
+
+.secondary strong {
+  color: #5b9e3e; }
+
 .secondary .item {
   padding: 0 0 5em; }
   .secondary .item:first-child {
@@ -511,12 +560,16 @@ h2, .h2 {
   width: 2em;
   height: 2em;
   font-size: 2em;
-  padding: 0.55em 0.5em 0.21em; }
+  padding: .55em .5em .21em; }
 
 .secondary .item-body {
   font-size: 1.4em;
-  margin: 1em 0 0;
+  margin: 3.85714em 0 0;
+  padding: 0;
   line-height: 1.5; }
+
+.secondary i + .item-body {
+  margin-top: 1em; }
 
 .services-primary {
   padding: 5em 0 0; }
@@ -559,6 +612,10 @@ h2, .h2 {
     @media (min-width: 48em) {
       .services-secondary .heading {
         font-size: 2.4em; } }
+  .services-secondary .heading a {
+    border-bottom: 1px dotted rgba(91, 158, 62, 0.5); }
+    .services-secondary .heading a:hover {
+      border-bottom: 1px solid #5b9e3e; }
   .services-secondary .service-list {
     margin-top: 4em;
     padding-bottom: 1em; }
@@ -615,6 +672,11 @@ h2, .h2 {
     @media (min-width: 48em) {
       .services-secondary .details {
         font-size: 1.6em; } }
+  .services-secondary .details a {
+    color: #5b9e3e;
+    border-bottom: 1px dotted rgba(91, 158, 62, 0.5); }
+    .services-secondary .details a:hover {
+      border-bottom: 1px solid #5b9e3e; }
 
 .wysiwyg {
   padding: 5em 0 10em; }
@@ -640,7 +702,7 @@ h2, .h2 {
     font-weight: 700;
     color: #5b9e3e; }
   .wysiwyg h4, .wysiwyg h5, .wysiwyg h6 {
-    margin: 0 0 0.5em; }
+    margin: 0 0 .5em; }
   .wysiwyg h3 {
     font-size: 2.4em;
     margin: 0 0 1em; }
@@ -679,16 +741,59 @@ h2, .h2 {
     margin-top: 0;
     margin-bottom: 0;
     list-style: none; }
+  .wysiwyg .complement .teammates {
+    border: 1px solid #f2f2f2; }
   .wysiwyg li {
     line-height: 1.5;
     margin-bottom: 1.25em; }
     .wysiwyg li:last-of-type {
       margin-bottom: 0; }
+  .wysiwyg .teammates li {
+    margin: 0;
+    border-top: 1px solid #f2f2f2; }
+    .wysiwyg .teammates li:first-child {
+      border-top: none; }
   .wysiwyg a {
     color: #5b9e3e;
     border-bottom: 1px dotted rgba(91, 158, 62, 0.5); }
     .wysiwyg a:hover {
       border-bottom: 1px solid #5b9e3e; }
+  .wysiwyg .teammate-bio {
+    display: none; }
+  .wysiwyg .teammate-bio.focus {
+    display: block; }
+    .wysiwyg .teammate-bio.focus:before, .wysiwyg .teammate-bio.focus:after {
+      content: ""; }
+    .wysiwyg .teammate-bio.focus:after {
+      display: table;
+      clear: both; }
+  .wysiwyg .teammates a {
+    display: block;
+    padding: .5em 0 .5em 1em;
+    border-bottom: none; }
+    .wysiwyg .teammates a:hover {
+      border-bottom: none; }
+    .wysiwyg .teammates a.focus {
+      padding-left: 2em;
+      background-color: #5b9e3e;
+      color: #fff; }
+  .wysiwyg img {
+    display: block;
+    margin-bottom: 1em;
+    max-width: 100%; }
+  .wysiwyg img.alignleft {
+    float: left;
+    margin-right: 1em; }
+  .wysiwyg img.alignright {
+    float: right;
+    margin-left: 1em; }
+  .wysiwyg img.aligncenter {
+    margin-left: auto;
+    margin-right: auto; }
+  .wysiwyg img.alignleft,
+  .wysiwyg img.alignright,
+  .wysiwyg img.aligncenter {
+    max-width: 65%; }
 
 .hours ul.color-med {
   list-style: none;
@@ -744,13 +849,13 @@ h2, .h2 {
         width: auto;
         vertical-align: inherit; } }
   .outro .btn-share {
-    transition: box-shadow 0.25s ease-in-out;
+    transition: box-shadow .25s ease-in-out;
     border-radius: 50%;
     font-size: 2em;
     width: 2em;
     height: 2em;
-    margin: 0 0.75em;
-    padding: 0.55em 0.5em 0.21em; }
+    margin: 0 .75em;
+    padding: .55em .5em .21em; }
     .outro .btn-share:hover {
       box-shadow: 0 0 0.375em rgba(0, 0, 0, 0.25); }
     .outro .btn-share:active {
@@ -758,14 +863,14 @@ h2, .h2 {
               transform: translateY(2px); }
     @media (min-width: 48em) {
       .outro .btn-share {
-        margin: 0 0.75em 0 0; } }
+        margin: 0 .75em 0 0; } }
   .outro li {
     margin: 0 0 1em; }
   .outro li:last-child {
     margin-bottom: 0; }
   .outro .allcaps {
     font-size: 2.2em;
-    margin: 0 0 0.15em; }
+    margin: 0 0 .15em; }
   .outro .label {
     font-size: 1.8em;
     margin: 0; }

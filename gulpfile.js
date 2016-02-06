@@ -1,9 +1,9 @@
 'use strict';
- 
+
 // get all the dependecies
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
-    cssmin = require('gulp-minify-css'),
+    cssnano = require('gulp-cssnano'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
@@ -23,7 +23,7 @@ gulp.task('sass',function(){
         .pipe(autoprefixer({browsers:['last 2 versions']}))
             .on('error', gutil.log)
         .pipe(gulp.dest(srcpath + '/css'))
-        .pipe(cssmin())
+        .pipe(cssnano())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(srcpath + '/css'));
 });

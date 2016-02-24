@@ -42,7 +42,7 @@
             <h2 class="heading color-primary"><?php echo $servicesSecondaryHeading; ?></h2>
             <ul class="service-list list-reset">
                 <?php while ( has_sub_field('services_secondary') ) : ?><li class="service-item">
-                    <em class="cost regular normal color-primary">$<?php the_sub_field('cost'); ?></em><span class="name color-med bold">per&nbsp;<?php the_sub_field('name'); ?></span><?php if ( get_sub_field('details') ) : ?><a href="javascript:void(0)" class="trigger-service bold color-primary">+</a><?php endif; ?>
+                    <em class="cost regular normal color-primary">$<?php the_sub_field('cost'); ?></em><span class="name color-med bold">per&nbsp;<?php the_sub_field('name'); ?></span><?php if ( get_sub_field('details') ) : ?><a href="javascript:void(0)" class="trigger-service bold color-primary"><i class="icon-question"></i></a><?php endif; ?>
                     <?php if ( get_sub_field('details') ) : ?><p class="details color-med"><?php the_sub_field('details'); ?></p><?php endif; ?>
                 </li><?php endwhile; ?>
             </ul>

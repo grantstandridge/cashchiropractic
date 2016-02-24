@@ -207,9 +207,9 @@ body.menu-on {
     }
     h2 {
         @include break-min($m){
-            padding: 1em 0;
+            padding: .75em 0;
         }
-        padding: 1.25em 0;
+        padding: 1em 0;
         text-align: center;
         font-weight: 400;
     }
@@ -289,6 +289,9 @@ body.menu-on {
         padding: 0 0 5em;
     }
     [class*="icon-"] {
+        @include break-min($m){
+            font-size: 3.5em;
+        }
         border-radius: 50%;
         width: 2em;
         height: 2em;
@@ -400,7 +403,8 @@ body.menu-on {
             font-size: 1.6em;
         }
         font-size: 1.2em;
-        margin-left: .5em;
+        margin-left: .25em;
+        vertical-align: middle;
     }
     .open .details {
         max-height: none;
@@ -466,6 +470,7 @@ body.menu-on {
             font-size: 2.8em;
         }
         font-size: 2.4em;
+        line-height: 1;
         margin: 0 0 1em;
     }
     h4 {
@@ -510,12 +515,18 @@ body.menu-on {
     .complement .teammates {
         border: 1px solid #f2f2f2;
     }
+    ul {
+        margin: 1.25em 0;
+        padding-left: 2.5em;
+    }
+    p + ul {
+        margin-top: 0;
+    }
+    ul + p {
+        padding-top: 0;
+    }
     li {
-        &:last-of-type {
-            margin-bottom: 0;
-        }
         line-height: 1.5;
-        margin-bottom: 1.25em;
     }
     .teammates li {
         &:first-child {
@@ -685,6 +696,120 @@ body.menu-on {
             border-bottom: none;
         }
     }
+}
+.page-id-92 {
+    .layout-wrap > ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+    }
+    .layout-wrap > ul li {
+        @include break-min($s){
+            width: 48%;
+        }
+        width: 100%;
+        padding-bottom: 1.25em;
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    &:focus {
+        border-color: #5b9e3e;
+    }
+    max-width: 100%;
+    transition: border-color .25s ease-in-out;
+    outline: 0;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #dfdfdf;
+    font-family: inherit;
+    color: #414042;
+    padding: .25em .5em;
+    font-size: 1.2em;
+    display: block;
+}
+.gfield_error input[type="text"],
+.gfield_error input[type="email"],
+.gfield_error input[type="tel"],
+.gfield_error textarea {
+    &:focus {
+        border-color: #C00;
+    }
+    border-color: #C00;
+}
+input[type="submit"] {
+    &:hover {
+        background-color: #45792F;
+    }
+    .touch &:hover {
+        background-color: #5b9e3e;
+    }
+    appearance: none;
+    transition: background-color .25s ease-in-out;
+    border: none;
+    outline: 0;
+    box-shadow: none;
+    border-radius: 0;
+    background-color: #5b9e3e;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    letter-spacing: .025em;
+    padding: .75em 1.5em;
+    margin-top: 2em;
+    cursor: pointer;
+}
+.gfield_required {
+    color: #c00;
+    padding-left: .25em;
+}
+.gform_body .gform_fields {
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+}
+.gform_fields li {
+    &:first-child {
+        margin-top: 0;
+    }
+    line-height: 1.3;
+    margin-top: 2em;
+}
+.gfield_label {
+    display: inline-block;
+    padding-bottom: .25em;
+}
+.validation_error {
+    @include break-min($m){
+        font-size: 1.6em;
+    }
+    font-size: 1.2em;
+    margin-bottom: 2em;
+    color: #C00;
+}
+.validation_message {
+    color: #C00;
+    font-size: .75rem;
+    margin-top: .25em;
+}
+.gform_confirmation_message_1 {
+    @include break-min($m){
+        font-size: 1.6em;
+    }
+    h3 {
+        @include break-min($m){
+            font-size: 1.75em;
+        }
+        font-size: 2em;
+        color: #5b9e3e;
+    }
+    color: #414042;
+    font-size: 1.2em;
 }
 .site-footer {
     hr {

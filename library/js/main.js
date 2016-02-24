@@ -40,10 +40,8 @@
         toggleServiceVisibility : function( e ){
             if ( this.parentElement.classList.contains( constants.serviceTriggerClass ) ) {
                 this.parentElement.classList.remove( constants.serviceTriggerClass );
-                this.innerHTML = "+";
             } else {
                 this.parentElement.classList.add( constants.serviceTriggerClass );
-                this.innerHTML = "-";
             }
         },
         toggleTeammateVisibility : function( e ){

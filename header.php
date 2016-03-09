@@ -13,6 +13,7 @@
     <?php /* Put any emergency styles manually into the blame.css stylesheet instead of the style.min.css one */ ?><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/library/css/blame.css?v=<?php echo rand(10000,99999); ?>" type="text/css" />
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     <?php wp_head(); ?>
+    <?php if( is_page("contact") ): ?><script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script><?php endif; ?>
 </head>
 <body <?php body_class(); ?>>
 <script>var b=document.documentElement;b.setAttribute('data-useragent',navigator.userAgent);b.setAttribute('data-platform',navigator.platform);b.className+=((!!('ontouchstart' in window)||!!(navigator.MaxTouchPoints > 0)||!!(navigator.msMaxTouchPoints > 0))?' touch':'');</script>

@@ -64,7 +64,6 @@ function ges_ahoy() {
 // let's get this party started
 add_action( 'after_setup_theme', 'ges_ahoy' );
 
-
 /************* OEMBED SIZE OPTIONS *************/
 
 if ( ! isset( $content_width ) ) {

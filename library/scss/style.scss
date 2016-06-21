@@ -491,7 +491,7 @@ body.menu-on {
         }
         font-size: 1.2em;
     }
-    ul, p {
+    ol, ul, p {
         @include break-min($m){
             font-size: 1.6em;
         }
@@ -515,14 +515,14 @@ body.menu-on {
     .complement .teammates {
         border: 1px solid #f2f2f2;
     }
-    ul {
+    ol, ul {
         margin: 1.25em 0;
         padding-left: 2.5em;
     }
-    p + ul {
+    p + ul, p + ol {
         margin-top: 0;
     }
-    ul + p {
+    ul + p, ol + p {
         padding-top: 0;
     }
     li {
@@ -573,6 +573,7 @@ body.menu-on {
         display: block;
         margin-bottom: 1em;
         max-width: 100%;
+        height: auto;
     }
     @include break-min($m){
         img.alignleft {
@@ -833,4 +834,17 @@ input[type="submit"] {
     }
     text-align: center;
     padding: 5em 0;
+}
+.video-embed__container {
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
 }

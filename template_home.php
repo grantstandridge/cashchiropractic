@@ -37,7 +37,7 @@
             <section class="contact">
                 <div class="method">
                     <p class="color-med">To learn more about Cash Chiropractic, please call us today at:</p>
-                    <a href="tel:19182727432" class="phone color-primary bold">918.272.7432</a>
+                    <a href="tel:19182741141" class="phone color-primary bold">918.274.1141</a>
                 </div>
                 <div class="method">
                     <a href="https://www.google.com/maps/place/12707+East+86th+St+N,+Owasso,+OK+74055/@36.2790032,-95.8319746,17z/data=!3m1!4b1!4m2!3m1!1s0x87b6f0bc3acebd89:0xaad09313289ecc0" target="_blank" class="icon-pin-map color-primary inline-block"></a>

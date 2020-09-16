@@ -23,7 +23,7 @@
             <h1 class="logo">
                 <a href="/" class="block">Cash Chiropractic</a>
             </h1>
-            <a href="tel:19182727432" class="tel bold color-primary">918.272.7432</a>
+            <a href="tel:19182741141" class="tel bold color-primary">918.274.1141</a>
         </div>
         <a href="javascript:void(0)" id="trigger-menu" class="site-nav-trigger color-primary">&#9776;</a><?php wp_nav_menu( array(
             'theme_location' => 'The Main Menu',
